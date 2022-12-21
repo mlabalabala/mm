@@ -20,5 +20,5 @@ if __name__ == '__main__':
     mmurl = re.findall(r, mmres.url)[0]
     mmstrmod = re.sub(r, mmurl, mmstr, 0, re.MULTILINE)
 
-    with open('mmzxsp.json', 'w', encoding='utf8') as w:
+    with open('mmzxsp', 'w', encoding='utf8') as w:
         w.write(mmstrmod)
