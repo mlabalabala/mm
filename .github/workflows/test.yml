@@ -26,7 +26,7 @@ jobs:
           git config --global user.email labalabala@protonmail.com
           git config --global user.name mlabalabala
           git add mmzxsp
-          git commit -m "update" -a
+          git commit -m"action:`date`"
           git pull --rebase
 
       - name: Push changes
