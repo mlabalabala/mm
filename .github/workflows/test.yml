@@ -16,9 +16,10 @@ jobs:
           cache: 'pip'
 
       - run: pip install -r requirements.txt
-      - run: pip list
-      - run: python -version
-      - run: python test.py
+      - run: |
+          pip list
+          python -v
+          python test.py
 
 
 
