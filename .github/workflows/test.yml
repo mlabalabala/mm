@@ -22,7 +22,7 @@
 #     - run: python test.py
 
 
-on: repository_dispatch
+on: workflow_dispatch
  
 jobs:
   run:
