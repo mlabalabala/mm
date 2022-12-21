@@ -22,7 +22,7 @@ jobs:
           python test.py
 
       - name: commit
-         run: |
+        run: |
           git add mmzxsp
           git commit -m "update" -a
 
