@@ -26,7 +26,7 @@ jobs:
           git config --global user.email 1842074134@qq.com
           git config --global user.name 1842074134
           git add mmzxsp
-          git commit -m"action:`date`"
+          git commit -m "updata" mmzxsp
           git pull --rebase
 
       - name: Push changes
