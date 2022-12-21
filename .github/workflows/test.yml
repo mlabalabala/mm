@@ -23,6 +23,8 @@ jobs:
 
       - name: commit
         run: |
+          git config --global user.email labalabala@protonmail.com
+          git config --global user.name ShiHaojie
           git add mmzxsp
           git commit -m "update" -a
 
