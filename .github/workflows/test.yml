@@ -23,7 +23,6 @@ jobs:
 
       - name: commit
         run: |
-          git config --global user.email "1842074134@qq.com"
           git config --global user.name "1842074134"
           git add mmzxsp
           git commit -m "updata" mmzxsp
