@@ -23,8 +23,8 @@ jobs:
 
       - name: commit
         run: |
-          git config --global user.email labalabala@protonmail.com
-          git config --global user.name mlabalabala
+          git config --global user.email 1842074134@qq.com
+          git config --global user.name 1842074134
           git add mmzxsp
           git commit -m"action:`date`"
           git pull --rebase
