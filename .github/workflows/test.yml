@@ -14,10 +14,9 @@ jobs:
         with:
           python-version: 3.8
           cache: 'pip'
-
       - run: pip install -r requirements.txt
-      - run: |
-          pip list
+      - name: Run
+        run: |
           python -v
           python test.py
 
