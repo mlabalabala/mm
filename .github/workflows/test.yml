@@ -24,6 +24,7 @@ jobs:
       - name: commit
         run: |
           git config --global user.name "1842074134"
+          git config --global user.email "1842074134@qq.com"
           git add mmzxsp
           git commit -m "updata" mmzxsp
           git pull --rebase
