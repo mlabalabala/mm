@@ -19,12 +19,11 @@ jobs:
         run: |
           python -v
           python test.py
-          
-      - name : upload
-        uses: actions/upload-artifact@master
-        with:
-          name: mmzxsp
-          path: ${{ github.workspace }}/
+
+      - name: commit
+         run: |
+          git add mmzxsp
+          git commit -m "update" -a
 
 
 
