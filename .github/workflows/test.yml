@@ -19,6 +19,12 @@ jobs:
         run: |
           python -v
           python test.py
+          
+      - name : upload
+        uses: actions/upload-artifact@master
+        with:
+          name: mmzxsp
+          path: ${{ github.workspace }}/
 
 
 
