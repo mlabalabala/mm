@@ -27,7 +27,7 @@ jobs:
           git config --global user.email "1842074134@qq.com"
           git add mmzxsp
           git commit -m "updata" mmzxsp
-          git pull --rebase
+          git pull "https://github.com/mlabalabala/test.git" main
 
       - name: Push changes
         uses: ad-m/github-push-action@master
