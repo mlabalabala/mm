@@ -1,35 +1,36 @@
-# name: Python application
-
-# on: workflow_dispatch
-
-# jobs:
-#   build:
-
-#     runs-on: ubuntu-latest
-
-#     steps:
-#     - name: checkout actions
-#     - uses: actions/checkout@v1
-
-#     - name: Set up Python 3.8
-#       uses: actions/setup-python@v1
-#       with:
-#         python-version: 3.8
-#         cache: 'pip'
-#     - run: pip install -r requirements.txt
-#     - run: pip list
-#     - run: python -version
-#     - run: python test.py
-
+name: Python application
 
 on: workflow_dispatch
- 
+
 jobs:
-  run:
+  work:
+
     runs-on: ubuntu-latest
- 
+
     steps:
-    - name: Hello World
-      run: |
-        echo My name is P3TERX.
-        echo Hello World!
+    - name: checkout actions
+    - uses: actions/checkout@v1
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+        cache: 'pip'
+        
+    - run: pip install -r requirements.txt
+    - run: pip list
+    - run: python -version
+    - run: python test.py
+
+
+# on: workflow_dispatch
+ 
+# jobs:
+#   run:
+#     runs-on: ubuntu-latest
+ 
+#     steps:
+#     - name: Hello World
+#       run: |
+#         echo My name is P3TERX.
+#         echo Hello World!
