@@ -1,26 +1,25 @@
-name: Python application
+name: Schedule Worker
 
 on: workflow_dispatch
 
 jobs:
   work:
-
     runs-on: ubuntu-latest
-
     steps:
-    - name: checkout actions
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
+      - uses: szenius/set-timezone@v1.0 # 设置执行环境的时区
+        with:
+          timezoneLinux: "Asia/Shanghai"
+      - uses: actions/setup-python@v1 # 使用python装配器
+        with:
+          python-version: 3.8
+          cache: 'pip'
 
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.8
-        cache: 'pip'
-        
-    - run: pip install -r requirements.txt
-    - run: pip list
-    - run: python -version
-    - run: python test.py
+      - run: pip install -r requirements.txt
+      - run: pip list
+      - run: python -version
+      - run: python test.py
+
 
 
 # on: workflow_dispatch
