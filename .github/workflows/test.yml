@@ -3,7 +3,7 @@ name: Schedule Worker
 # on: workflow_dispatch
 on:
   schedule:
-    - cron: "0 4 * * *"
+    - cron: "0 16 * * *"
 
 jobs:
   work:
