@@ -1,9 +1,9 @@
 name: Schedule Worker
 
-# on: workflow_dispatch
-on:
-  schedule:
-    - cron: "0 0-23 * * *"
+on: workflow_dispatch
+# on:
+#   schedule:
+#     - cron: "0 0-23 * * *"
   
 
 jobs:
@@ -25,18 +25,28 @@ jobs:
           python -v
           python test.py
 
-      - name: commit
-        run: |
-          git config user.name "1842074134"
-          git config user.email "1842074134@qq.com"
-          git add mmzxsp
-          git commit -m "updata" mmzxsp
-          git pull "https://github.com/mlabalabala/test.git" main
+#       - name: commit
+#         run: |
+#           git config user.name "1842074134"
+#           git config user.email "1842074134@qq.com"
+#           git add mmzxsp
+#           git commit -m "updata" mmzxsp
+#           git pull "https://github.com/mlabalabala/test.git" main
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+#       - name: Push changes
+#         uses: ad-m/github-push-action@master
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit
+        uses: EndBug/add-and-commit@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          author_name: GITHUB_GENERATOR
+          author_email: 1842074134@qq.com
+          message: "Updata"
+          add: "mmzxsp"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
 
