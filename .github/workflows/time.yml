@@ -1,1 +1,26 @@
 name: TIME
+
+on: workflow_dispatch  
+
+jobs:
+  work:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: szenius/set-timezone@v1.0 # 设置执行环境的时区
+        with:
+          timezoneLinux: "Asia/Shanghai"
+      - uses: actions/setup-python@v1 # 使用python装配器
+      
+      - name: GEN_TIME
+        run: date > time
+        
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v4
+        with:
+          author_name: GITHUB_GENERATOR
+          author_email: 1842074134@qq.com
+          message: "GENERATE TIME"
+          add: "time"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
