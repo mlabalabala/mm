@@ -23,7 +23,7 @@ jobs:
       - name: Run
         run: |
           python -v
-          python test.py
+          python GenMM.py
 
 #       - name: commit
 #         run: |
