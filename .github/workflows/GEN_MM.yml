@@ -4,6 +4,7 @@ name: Schedule Worker
 on:
   schedule:
     - cron: "0 0-23 * * *"
+  workflow_dispatch:
   
 
 jobs:
