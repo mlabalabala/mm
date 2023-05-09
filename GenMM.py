@@ -26,7 +26,7 @@ if __name__ == '__main__':
     with open('sex5offline', 'r', encoding='utf8') as r:
         s0 = r.read()
     u = 'http://tz2023may.com'
-    s1 = s.get(u, headers=h, verify=False)
+    s1 = s.get(u, headers=h, verify=False).url
     r = r'www\.\S+\.com'
     s1 = re.findall(r, s1, re.MULTILINE)[0]
     s0 = re.sub(r, s1, s0, 0, re.MULTILINE)
