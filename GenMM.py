@@ -22,3 +22,14 @@ if __name__ == '__main__':
 
     with open('mmzxsp', 'w', encoding='utf8') as w:
         w.write(mmstrmod)
+    
+    with open('sex5_all_urls.json', 'r', encoding='utf8') as r:
+        s0 = r.read()
+    u = 'http://tz2023may.com'
+    s1 = s.get(u, headers=h, verify=False)
+    r = r'www\.\S+\.com'
+    s1 = re.findall(r, s1, re.MULTILINE)[0]
+    s0 = re.sub(r, s1, s0, 0, re.MULTILINE)
+
+    with open('sex5_all_urls.json', 'w', encoding='utf8') as w:
+        w.write(s0)
