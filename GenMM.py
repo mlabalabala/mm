@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     with open('mmzxsp', 'w', encoding='utf8') as w:
         w.write(mmstrmod)
-
+    '''
     with open('sex5offline', 'r', encoding='utf8') as r:
         s0 = r.read()
     u = 'http://tz2023may.com'
@@ -33,3 +33,4 @@ if __name__ == '__main__':
 
     with open('sex5offline', 'w', encoding='utf8') as w:
         w.write(s0)
+    '''
