@@ -1,4 +1,6 @@
 import requests, urllib3
+from requests.adapters import HTTPAdapter
+from urllib3.util import Retry
 
 urllib3.util.ssl_.DEFAULT_CIPHERS = "TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-256-GCM-SHA384:ECDHE:!COMPLEMENTOFDEFAULT"
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
