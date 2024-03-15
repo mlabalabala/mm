@@ -23,7 +23,9 @@ if __name__ == '__main__':
     redirect_urls = set()
     for def_url in def_urls:
         try:
-            res = session.get(url=f"https://www.{def_url}.com/",headers=h,verify=False,timeout=3)
+            u=f"https://www.{def_url}.com/"
+            print(f'ori: {u}')
+            res = session.get(url=u,headers=h,verify=False,timeout=3)
             redirect_urls.add(res.url)
         except:
             continue
