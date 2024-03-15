@@ -26,6 +26,7 @@ if __name__ == '__main__':
             u=f"https://www.{def_url}.com/"
             print(f'ori: {u}')
             res = session.get(url=u,headers=h,verify=False,timeout=3)
+            print(res.url)
             redirect_urls.add(res.url)
         except:
             continue
