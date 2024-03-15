@@ -27,7 +27,8 @@ if __name__ == '__main__':
             print(f'ori: {u}')
             res = session.get(url=u,headers=h,verify=False,allow_redirects=True,timeout=3)
             print(res.url)
-            redirect_urls.add(res.url)
+            if u != res.url:
+               redirect_urls.add(res.url)
         except:
             continue
     json_str = json.dumps(list(redirect_urls))
