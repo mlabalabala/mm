@@ -16,7 +16,7 @@ session.mount('https://', adapter)
 if __name__ == '__main__':
 
     # def_urls = ["dh44u","2cdas","rgcqe","pupbx","e8jt5"]
-    def_urls_res_url = "https://www.bunnyabc.eu.org:15245/d/mm/4hu_url_sub_string.json?sign=oWYvIN_lsML77vTp7Y24Ts3mbLg-KG5D-Mslneo0uV4=:0"
+    def_urls_res_url = "http://www.bunnyabc.eu.org:5002/chfs/shared/share/res/4hu_url_sub_string.json"
     res = session.get(url=def_urls_res_url,headers=h,verify=False)
     def_urls = json.loads(res.text)
     print("def_urls:", def_urls)
