@@ -16,7 +16,7 @@ session.mount('https://', adapter)
 if __name__ == '__main__':
 
     # def_urls = ["dh44u","2cdas","rgcqe","pupbx","e8jt5"]
-    def_urls_res_url = "http://www.bunnyabc.eu.org:5002/chfs/shared/share/res/4hu_url_sub_string.json"
+    def_urls_res_url = "https://www.bunnyabc.eu.org:15245/d/guest/res/4hu_url_sub_string.json"
     res = session.get(url=def_urls_res_url,headers=h,verify=False)
     def_urls = json.loads(res.text)
     print("def_urls:", def_urls)
@@ -34,27 +34,3 @@ if __name__ == '__main__':
     print("json_str:", json_str)
     with open("4hu_home_urls","w+",encoding="UTF-8") as w:
         w.write(json_str)
-
-    '''
-    import re
-    mmu = 'http://www.ef323.com'
-    r = r'https://www\.\w+\.com'
-    mmres = session.get(mmu, headers=h, verify=False)
-    mmurl = re.findall(r, mmres.url)[0]
-
-    with open('mmzxsp', 'w', encoding='utf8') as w:
-        w.write(mmstrmod)
-    '''
-    
-    '''
-    with open('sex5offline', 'r', encoding='utf8') as r:
-        s0 = r.read()
-    u = 'http://tz2023may.com'
-    s1 = s.get(u, headers=h, verify=False).url
-    r = r'www\.\S+\.com'
-    s1 = re.findall(r, s1, re.MULTILINE)[0]
-    s0 = re.sub(r, s1, s0, 0, re.MULTILINE)
-
-    with open('sex5offline', 'w', encoding='utf8') as w:
-        w.write(s0)
-    '''
