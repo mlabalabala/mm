@@ -1,0 +1,34 @@
+name: GEN_LIVE
+
+on:
+  schedule:
+    - cron: "50 10 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y sed nmap
+        # sudo apt-get install -y yt-dlp sed nmap
+      
+    - name: Run Multitest Script
+      run: |
+        cd $GITHUB_WORKSPACE/live_test
+        bash ./multi_test.sh 1
+      
+    - name: Update Results
+      run: |
+        cd $GITHUB_WORKSPACE/speedtest
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Update results"
+        git push
