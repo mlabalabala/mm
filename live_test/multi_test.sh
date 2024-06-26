@@ -138,9 +138,9 @@ curl -s --request POST --url 'http://tonkiang.us/hoteliptv.php' --header 'Conten
 curl -s --request POST --url 'http://tonkiang.us/hoteliptv.php?page=3&pv='$channel_key --header 'Content-Length: 0'>>test.html
 grep -o "href='hotellist.html?s=[^']*'"  test.html > tempip.txt
 sed -n "s/^.*href='hotellist.html?s=\([^:]*\):[0-9].*/\1/p" tempip.txt > tmp_onlyip
-sort tmp_onlyip | uniq | sed '/^\s*$/d'|head -10 > $onlyip
+sort tmp_onlyip | uniq | sed '/^\s*$/d'|head -15 > $onlyip
 sed -n "s/^.*href='hotellist.html?s=[^:]*:\([0-9].*\)'/\1/p" tempip.txt > tmp_onlyport
-sort tmp_onlyport | uniq | sed '/^\s*$/d'|head -10 > $onlyport
+sort tmp_onlyport | uniq | sed '/^\s*$/d'|head -15 > $onlyport
 rm -f test.html tempip.txt tmp_onlyip tmp_onlyport $ipfile
 # sed -n "s/^.*href='hotellist.html?s=\([^:]*:[0-9].*\)'/\1/p" tempip.txt > tmp_ipport
 # sort tmp_ipport | uniq | sed '/^\s*$/d' > $ipfile
@@ -154,6 +154,7 @@ while IFS= read -r ip; do
         # 尝试连接 IP 地址和端口号
         # nc -w 1 -v -z $ip $port
         output=$(nc -w 1 -v -z "$ip" "$port" 2>&1)
+	echo $output
         # 如果连接成功，且输出包含 "succeeded"，则将结果保存到输出文件中
         if [[ $output == *"succeeded"* ]]; then
             # 使用 awk 提取 IP 地址和端口号对应的字符串，并保存到输出文件中
