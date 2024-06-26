@@ -2,7 +2,7 @@ name: GEN_LIVE
 
 on:
   schedule:
-    - cron: "*/30 5,6 * * *"
+    - cron: "*/37 5,6 * * *"
   workflow_dispatch:
 
 jobs:
