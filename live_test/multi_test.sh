@@ -135,6 +135,7 @@ onlyport="ip/${city}.onlyport"
 echo "===============从tonkiang检索 $channel_key 最新ip================="
 #/usr/bin/python3 hoteliptv.py $channel_key  >test.html
 curl -s --request POST --url http://tonkiang.us/hoteliptv.php --header 'Content-Type: application/x-www-form-urlencoded' --header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36' --data 'saerch='$channel_key > test.html
+curl --request POST --url 'http://tonkiang.us/hoteliptv.php?page=3&pv='$channel_key --header 'Content-Length: 0'>>test.html
 grep -o "href='hotellist.html?s=[^']*'"  test.html > tempip.txt
 sed -n "s/^.*href='hotellist.html?s=\([^:]*\):[0-9].*/\1/p" tempip.txt > tmp_onlyip
 sort tmp_onlyip | uniq | sed '/^\s*$/d' > $onlyip
