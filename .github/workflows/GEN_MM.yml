@@ -48,15 +48,15 @@ jobs:
           add: "*"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Mirror the Github repos to Gitee.
-      #   uses: Yikun/hub-mirror-action@master
-      #   with:
-      #     src: github/mlabalabala
-      #     dst: gitee/mlabalabala
-      #     dst_key: ${{ secrets.GITEE_CRR_KEY }}
-      #     dst_token: ${{ secrets.GITEE_TOKEN }}
-      #     mappings: ".github=>github"
-      #     force_update: true
+      - name: Mirror the Github repos to Gitee.
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/mlabalabala
+          dst: gitee/mlabalabala
+          dst_key: ${{ secrets.GITEE_CRR_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          static_list: "mm"
+          force_update: true
 
 
 
