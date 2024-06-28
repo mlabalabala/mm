@@ -3,7 +3,7 @@ name: Schedule Worker
 # on: workflow_dispatch
 on:
   schedule:
-    - cron: "0 */1 * * *"
+    - cron: "33 */1 * * *"
   workflow_dispatch:
   
 
@@ -42,12 +42,21 @@ jobs:
       - name: Commit
         uses: EndBug/add-and-commit@v4
         with:
-          author_name: GITHUB_GENERATOR
-          author_email: 1842074134@qq.com
+          author_name: "GitHub Action"
+          author_email: "action@github.com"
           message: "Updata"
           add: "*"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Mirror the Github repos to Gitee.
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/mlabalabala
+          dst: gitee/mlabalabala
+          dst_key: ${{ secrets.GITEE_CRR_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          mappings: ".github=>github"
+          force_update: true
 
 
 
